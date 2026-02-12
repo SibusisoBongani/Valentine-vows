@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- iOS Add to Home Screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="pink">
+<meta name="apple-mobile-web-app-title" content="ValentineVows">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>💕</text></svg>">
+
+<!-- Android/Chrome -->
+<meta name="theme-color" content="#ff6fa5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>💕 ValentineVows - Magical Valentine Surprise Creator 💕</title>
+    <link rel="Stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PAGE 1: Valentine Customization Form -->
+    <div id="page1" class="page active">
+        <div class="form-container">
+            <div class="floating-hearts-bg"></div>
+            
+            <div class="form-card">
+                <h1 class="glow-text">✨ ValentineVows ✨</h1>
+                <p class="subtitle">Create a magical Valentine surprise that they'll never forget</p>
+                
+                <div class="form-group">
+                    <label for="valentineName">Enter Your Valentine's Name</label>
+                    <input type="text" id="valentineName" placeholder="Sarah, John, Alex..." autocomplete="off">
+                    <span class="input-hint">💝 Their name will appear on the proposal</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loveMessage">Optional: Add a Sweet Message</label>
+                    <textarea id="loveMessage" rows="4" placeholder="You make my world brighter every single day..."></textarea>
+                    <span class="input-hint">💌 This message will appear after they say Yes!</span>
+                </div>
+
+                <!-- Add this after the loveMessage textarea -->
+<div class="form-group">
+    <label for="senderName">Your Name (Optional)</label>
+    <input type="text" id="senderName" placeholder="Your Secret Admirer" autocomplete="off">
+    <span class="input-hint">💝 Leave blank to show "Your Secret Admirer"</span>
+</div>
+                
+                <button id="createSurpriseBtn" class="create-btn pulse">
+                    <span class="btn-text">Create Surprise</span>
+                    <span class="btn-icon">✨💖🎁</span>
+                </button>
+            </div>
+            
+            <div class="footer">
+                <p>© 2026 - Spread love, not war 💕(SBM)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: Share Your Valentine Surprise -->
+    <div id="page2" class="page">
+        <div class="share-container">
+            <div class="share-card">
+                <div class="success-checkmark">🎉✨💖</div>
+                <h1 class="glow-text">Your Valentine Surprise is Ready!</h1>
+                <p class="subtitle">Share this magical link with your Valentine:</p>
+                
+                <div class="link-container">
+                    <input type="text" id="shareLink" readonly>
+                    <button id="copyLinkBtn" class="copy-btn">
+                        <span class="copy-icon">📋</span>
+                        Copy Link
+                    </button>
+                </div>
+                <!-- Add this after share-buttons div or before action-buttons -->
+<div class="preview-section">
+    <button id="previewSurpriseBtn" class="preview-btn">
+        <span class="btn-icon">👀</span>
+        View Surprise Before Sharing
+        <span class="btn-icon">💕</span>
+    </button>
+    <p class="preview-hint-small">See exactly what your Valentine will experience</p>
+</div>
+                <div class="share-buttons">
+                    <p class="share-label">Share via:</p>
+                    <div class="social-buttons">
+                        <button id="whatsappShare" class="social-btn whatsapp">
+                            <span class="social-icon">📱</span>
+                            WhatsApp
+                        </button>
+                        <button id="facebookShare" class="social-btn facebook">
+                            <span class="social-icon">📘</span>
+                            Facebook
+                        </button>
+                        <button id="instagramShare" class="social-btn instagram">
+                            <span class="social-icon">📷</span>
+                            Instagram
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="createAnotherBtn" class="create-another-btn">
+                        <span class="btn-icon">✨</span>
+                        Create Another Surprise
+                    </button>
+                </div>
+                
+                <div class="preview-hint">
+                    <p>💡 Your Valentine will see a magical proposal when they open this link!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: Valentine Proposal (Surprise Page - accessed via link) -->
+    <div id="page3" class="page">
+        <div class="snowflakes" aria-hidden="true"></div>
+        
+        <div class="container" id="mainContainer">
+            <div class="floating-hearts"></div>
+            <h1 class="glow-text">💖 Will You Be My Valentine? 💖</h1>
+            <h2 id="nameDisplay">For My Dearest Love</h2>
+            
+            <div class="button-group">
+                <button id="yesBtn" class="pulse">Yes 💘</button>
+                <button id="noBtn">No 💔</button>
+            </div>
+        </div>
+
+        <!-- Celebration Container -->
+        <div id="celebration"></div>
+        
+        <!-- Personalized Love Message (Shows after clicking Yes) -->
+        <div id="loveMessagePopup" class="love-message hidden">
+            <div class="message-content">
+                <h2 id="personalizedYesTitle">Yay! You said yes! 🎉</h2>
+                <p id="personalizedLoveMessage">You've just made me the happiest person in the world! 💕</p>
+                <p class="cute-quote" id="personalizedQuote">"Every love story is beautiful, but ours is my favorite." 📖✨</p>
+                <div class="heart-animation">❤️❤️❤️</div>
+                <p class="from-sender" id="fromSender">With love, Your Secret Admirer 💝</p>
+                
+                <!-- Create Surprise Button for Page 3 -->
+                <div class="create-surprise-section">
+                    <button id="createSurpriseFromPage3Btn" class="create-surprise-page3-btn">
+                        <span class="btn-icon">✨</span>
+                        Create Your Own Surprise
+                        <span class="btn-icon">💝</span>
+                    </button>
+                    <p class="create-surprise-hint">Want to make someone else's day special? Create your own Valentine surprise!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ADD this line BEFORE your script.js -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="supabase-config.js"></script>
+<!-- Your script (update this to use Supabase) -->
+<script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1540 @@
+/* EMERGENCY FIX - Force page backgrounds */
+#page3, #page3.active {
+    display: block !important;
+    background: linear-gradient(-45deg, #ffc0cb, #ff99cc, #ffb6c1, #ff8da1) !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Page Transition */
+.page {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ===== PAGE 1: FORM STYLES ===== */
+.form-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffdde1, #f9c9d4, #ffc0cb, #ffb3c6);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.floating-hearts-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="hearts" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><text x="10" y="20" font-size="20" fill="rgba(255,105,180,0.1)">❤️</text></pattern></defs><rect width="100%" height="100%" fill="url(%23hearts)"/></svg>');
+    opacity: 0.3;
+}
+
+.form-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.25);
+    max-width: 700px;
+    width: 100%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    animation: cardFloat 1s ease-out;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes cardFloat {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-card h1 {
+    color: #ff1a4c;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #ffb6c1;
+    border-radius: 20px;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff4d6d;
+    box-shadow: 0 0 0 5px rgba(255, 77, 109, 0.1);
+    transform: scale(1.02);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+.input-hint {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff2e75, #ff6fa5, #ffb3c6);
+    background-size: 200% 200%;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    animation: gradientMove 3s ease infinite, pulse 2s infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.create-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 46, 117, 0.4);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+.footer {
+    margin-top: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== PAGE 2: SHARE PAGE STYLES ===== */
+.share-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2, #ff6b6b, #ff8e8e);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.share-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    animation: cardFloat 1s ease-out;
+    text-align: center;
+}
+
+.success-checkmark {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.link-container {
+    display: flex;
+    gap: 10px;
+    margin: 40px 0;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #ffb6c1;
+}
+
+.link-container input {
+    flex: 1;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-family: monospace;
+    min-width: 400px;
+}
+
+.copy-btn {
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #ff2e75, #ff6fa5);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 46, 117, 0.3);
+}
+
+.copy-icon {
+    font-size: 1.2rem;
+}
+
+.share-buttons {
+    margin: 40px 0;
+}
+
+.share-label {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.whatsapp {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+}
+
+.facebook {
+    background: linear-gradient(45deg, #1877F2, #0E5A9C);
+}
+
+.instagram {
+    background: linear-gradient(45deg, #E4405F, #833AB4, #FCAF45);
+}
+
+.social-icon {
+    font-size: 1.3rem;
+}
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+.create-another-btn {
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #808080, #a0a0a0);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-another-btn:hover {
+    background: linear-gradient(45deg, #666, #888);
+    transform: scale(1.05);
+}
+
+.preview-hint {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 105, 180, 0.1);
+    border-radius: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* ===== PAGE 3: PROPOSAL STYLES ===== */
+#page3 {
+    background: linear-gradient(-45deg, #ffc0cb, #ff99cc, #ffb6c1, #ff8da1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflakes::before,
+.snowflakes::after {
+    content: '❄️❤️🧸🎈✨';
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: snowflake 10s linear infinite;
+    opacity: 0.3;
+    font-size: 24px;
+    word-spacing: 50px;
+}
+
+.snowflakes::after {
+    top: -20%;
+    animation-delay: -5s;
+    font-size: 20px;
+}
+
+@keyframes snowflake {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0.1; }
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    max-width: 600px;
+    width: 90%;
+    animation: containerAppear 1s ease-out;
+}
+
+@keyframes containerAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+h1 {
+    color: #ff1a4c;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.5);
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-bottom: 3px solid #ff69b4;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 18px 45px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 60px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+#yesBtn {
+    background: linear-gradient(45deg, #ff2e75, #ff6fa5);
+    box-shadow: 0 8px 20px rgba(255, 46, 117, 0.4);
+}
+
+#noBtn {
+    background: linear-gradient(45deg, #808080, #a0a0a0);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.4);
+    min-width: 180px;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+#yesBtn:hover {
+    box-shadow: 0 15px 30px rgba(255, 46, 117, 0.6);
+}
+
+#noBtn:hover {
+    background: linear-gradient(45deg, #666, #888);
+    box-shadow: 0 15px 30px rgba(128, 128, 128, 0.6);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 45px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, white, #ff4d4d);
+    border-radius: 50%;
+    animation: floatUp linear forwards;
+    z-index: 100;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    width: 2px;
+    height: 25px;
+    background: linear-gradient(to bottom, #666, #999);
+}
+
+/* Teddies */
+.teddy {
+    position: absolute;
+    bottom: -100px;
+    font-size: 50px;
+    animation: floatUp linear forwards;
+    z-index: 100;
+    filter: drop-shadow(0 10px 8px rgba(0,0,0,0.2));
+}
+
+/* Fireworks */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffd700, #ffa500);
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+    z-index: 200;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+
+/* Love Message Popup */
+.love-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(255, 0, 102, 0.4);
+    z-index: 1000;
+    text-align: center;
+    animation: messagePopIn 0.5s ease-out;
+    border: 5px solid #ff69b4;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    /* Make scrollbar visible for this element */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ff69b4 #f0f0f0; /* For Firefox */
+}
+
+/* Webkit (Chrome, Safari) scrollbar styles for .love-message */
+.love-message::-webkit-scrollbar {
+    width: 10px;
+}
+
+.love-message::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.love-message::-webkit-scrollbar-thumb {
+    background-color: #ff69b4;
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+
+.message-content {
+    padding-bottom: 20px; /* Add padding to prevent text being hidden by scrollbar */
+}
+
+.message-content h2 {
+    color: #ff1a4c;
+    border-bottom: none;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.cute-quote {
+    font-style: italic;
+    color: #ff69b4;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.heart-animation {
+    font-size: 3rem;
+    animation: bounce 1s ease infinite;
+    margin: 30px 0;
+}
+
+.from-sender {
+    color: #ff1493;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #ffb6c1;
+}
+
+@keyframes messagePopIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Shake animation for No button */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+/* Glow effect */
+.glow-text {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4da6; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff80bf, 0 0 40px #ff4da6; }
+}
+
+/* Pulse animation */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 46, 117, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 46, 117, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 46, 117, 0); }
+}
+
+/* Touch-friendly improvements */
+button, .copy-btn, .social-btn, .create-another-btn {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+input, textarea {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Prevent zoom on input focus on iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input, textarea, select {
+        font-size: 16px !important;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar on mobile */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* Tablet Landscape */
+    .form-card, .share-card {
+        padding: 40px;
+        max-width: 90%;
+    }
+    
+    .container {
+        max-width: 500px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablet Portrait */
+    .form-card, .share-card {
+        padding: 30px;
+        margin: 10px;
+    }
+    
+    .form-card h1, .share-card h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .link-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .link-container input {
+        min-width: 100%;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .copy-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 18px;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .social-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 18px;
+    }
+    
+    .container {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    
+    #noBtn {
+        min-width: 140px;
+    }
+    
+    .love-message {
+        padding: 30px 20px;
+        margin: 20px;
+        width: 90%;
+    }
+    
+    .message-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .message-content p {
+        font-size: 1.1rem;
+    }
+    
+    .heart-animation {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Mobile Phones */
+    .form-card, .share-card {
+        padding: 25px 15px;
+        margin: 5px;
+        border-radius: 20px;
+    }
+    
+    .form-card h1, .share-card h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .form-group input, .form-group textarea {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .input-hint {
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+    
+    .create-btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .success-checkmark {
+        font-size: 3rem;
+    }
+    
+    .link-container {
+        padding: 8px;
+        margin: 25px 0;
+    }
+    
+    .link-container input {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+    
+    .copy-btn, .social-btn, .create-another-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .social-icon {
+        font-size: 1.1rem;
+    }
+    
+    .preview-hint {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 25px 15px;
+        margin: 5px;
+        border-radius: 20px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        margin: 0;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    #yesBtn, #noBtn {
+        min-width: 180px;
+    }
+    
+    .love-message {
+        padding: 25px 15px;
+        margin: 15px;
+        width: 95%;
+        border-radius: 20px;
+    }
+    
+    .message-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .message-content p {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+    
+    .heart-animation {
+        font-size: 1.8rem;
+        margin: 20px 0;
+    }
+    
+    .from-sender {
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Very Small Phones */
+    .form-card, .share-card {
+        padding: 20px 10px;
+    }
+    
+    .form-card h1, .share-card h1 {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .love-message {
+        padding: 20px 10px;
+    }
+    
+    .message-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .message-content p {
+        font-size: 0.9rem;
+    }
+}
+/* ===== IMPROVED MOBILE EXPERIENCE ===== */
+
+/* Better touch targets for small phones */
+@media (max-width: 480px) {
+    /* Fix form spacing on mobile */
+    .form-card, .share-card {
+        padding: 25px 18px !important;
+        margin: 10px !important;
+        border-radius: 28px !important;
+    }
+    
+    /* Bigger, easier-to-tap buttons */
+    .create-btn, .copy-btn, .social-btn, .create-another-btn {
+        min-height: 52px !important;
+        padding: 14px 20px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    /* Center create button specifically */
+    .create-btn {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    /* Fix input fields on iOS */
+    input, textarea, button {
+        font-size: 16px !important; /* Prevents iOS zoom on focus */
+        border-radius: 16px !important;
+    }
+    
+    /* Better spacing for form groups */
+    .form-group {
+        margin-bottom: 24px !important;
+    }
+    
+    .form-group label {
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Make share link more readable */
+    .link-container input {
+        font-size: 14px !important;
+        padding: 14px !important;
+        min-width: auto !important;
+        text-align: center !important;
+        background: white !important;
+        border-radius: 16px !important;
+    }
+    
+    /* Stack social buttons nicely */
+    .social-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .social-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+    
+    /* Fix proposal page on mobile */
+    .container {
+        width: 92% !important;
+        padding: 30px 20px !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 20px !important;
+        word-break: break-word !important;
+    }
+    
+    /* Button group vertical on very small */
+    .button-group {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+    
+    #yesBtn, #noBtn {
+        width: 100% !important;
+        max-width: 240px !important;
+        min-height: 56px !important;
+        font-size: 1.2rem !important;
+    }
+    
+    /* Love message popup mobile */
+    .love-message {
+        width: 92% !important;
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        padding: 25px 18px !important;
+    }
+    
+    .message-content h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .message-content p {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Fix floating elements on mobile */
+    .balloon, .teddy, .firework {
+        pointer-events: none !important;
+    }
+}
+
+/* Extra small phones (iPhone SE, etc) */
+@media (max-width: 380px) {
+    .form-card h1, .share-card h1 {
+        font-size: 1.4rem !important;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem !important;
+    }
+    
+    .container {
+        padding: 25px 15px !important;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    #yesBtn, #noBtn {
+        max-width: 200px !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Fix notch and dynamic island issues */
+@supports (padding: max(0px)) {
+    .form-container, .share-container, #page3 {
+        padding-left: max(20px, env(safe-area-inset-left)) !important;
+        padding-right: max(20px, env(safe-area-inset-right)) !important;
+    }
+    
+    .form-card, .share-card, .container, .love-message {
+        padding-left: max(25px, env(safe-area-inset-left)) !important;
+        padding-right: max(25px, env(safe-area-inset-right)) !important;
+    }
+}
+
+/* Prevent pull-to-refresh on proposal page */
+#page3 {
+    overscroll-behavior-y: contain !important;
+}
+
+/* Better scrolling on mobile */
+.page.active {
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: auto !important;
+}
+
+/* Fix 100vh issue on mobile browsers */
+.form-container, .share-container, #page3 {
+    min-height: 100dvh !important; /* Uses dynamic viewport height */
+    min-height: -webkit-fill-available !important; /* Fallback */
+}
+
+/* Improve touch feedback */
+button, .copy-btn, .social-btn, .create-another-btn {
+    -webkit-tap-highlight-color: rgba(255, 105, 180, 0.3) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+button:active, .copy-btn:active, .social-btn:active {
+    transform: scale(0.97) !important;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Better form validation visual */
+input:invalid, textarea:invalid {
+    border-color: #ffb6c1 !important;
+}
+
+input:focus, textarea:focus {
+    transform: none !important; /* Prevents zoom issues */
+}
+
+/* Fix Instagram share button on mobile */
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+}
+
+/* Improve loading state */
+.create-btn:disabled {
+    opacity: 0.7 !important;
+    transform: none !important;
+    animation: none !important;
+}
+/* Preview Button Styles */
+.preview-section {
+    margin: 30px 0 20px;
+    text-align: center;
+}
+
+.preview-btn {
+    background: linear-gradient(45deg, #9c88ff, #6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.preview-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.5);
+}
+
+.preview-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.preview-hint-small {
+    margin-top: 10px;
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Preview Mode Indicator */
+.preview-mode-badge {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(108, 92, 231, 0.95);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 20px;
+        opacity: 1;
+    }
+}
+
+.preview-mode-badge button {
+    background: white;
+    color: #6c5ce7;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.preview-mode-badge button:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+/* Back to Share button */
+.back-to-share-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #6c5ce7;
+    border: 3px solid #6c5ce7;
+    border-radius: 50px;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.back-to-share-btn:hover {
+    background: #6c5ce7;
+    color: white;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .preview-btn {
+        padding: 14px 20px;
+        font-size: 1.1rem;
+    }
+    
+    .preview-mode-badge {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    
+    .back-to-share-btn {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== ADD THIS AT THE VERY END OF YOUR CSS FILE ===== */
+.container {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container.hidden {
+    display: none !important;
+}
+
+/* Fix for love message popup */
+.love-message {
+    display: block;
+}
+
+.love-message.hidden {
+    display: none !important;
+}
+
+/* Mobile fixes for preview */
+@media (max-width: 768px) {
+    .preview-mode-badge {
+        width: 90%;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .back-to-share-btn {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+/* ===== ADD THIS AT THE VERY END OF YOUR CSS FILE ===== */
+/* Fix for container visibility */
+.container {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.container.hidden {
+    display: none !important;
+}
+
+.love-message {
+    display: block;
+}
+
+.love-message.hidden {
+    display: none !important;
+}
+
+/* Ensure page3 background loads properly */
+#page3 {
+    background: linear-gradient(-45deg, #ffc0cb, #ff99cc, #ffb6c1, #ff8da1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* ===== CREATE SURPRISE BUTTON FOR PAGE 3 ===== */
+.create-surprise-section {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 2px dashed #ffb6c1;
+}
+
+.create-surprise-page3-btn {
+    background: linear-gradient(45deg, #9c88ff, #6c5ce7);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    margin-bottom: 15px;
+    min-height: 52px;
+}
+
+.create-surprise-page3-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.5);
+}
+
+.create-surprise-page3-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.create-surprise-hint {
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Mobile responsive styles for page 3 button */
+@media (max-width: 768px) {
+    .create-surprise-page3-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .create-surprise-hint {
+        font-size: 0.8rem;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-surprise-section {
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+    
+    .create-surprise-page3-btn {
+        max-width: 240px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        min-height: 48px;
+    }
+    
+    .create-surprise-hint {
+        font-size: 0.75rem;
+    }
+}
+/* Fix for long quotes on mobile */
+.cute-quote {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+}
+
+.message-content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+/* Optional styling for sender name field */
+#senderName {
+    background: rgba(255, 240, 245, 0.8);
+}
+
+#senderName::placeholder {
+    color: #ff99aa;
+    font-style: italic;
+    opacity: 0.7;
+}
